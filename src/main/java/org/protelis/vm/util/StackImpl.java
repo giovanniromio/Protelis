@@ -14,7 +14,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java8.util.Maps;
-import java.util.function.Function;
+import java8.util.function.Function;
 
 import org.protelis.lang.util.Reference;
 

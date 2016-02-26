@@ -2,7 +2,7 @@ package org.protelis.lang.util;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Objects;
+import java8.util.Objects;
 import java8.util.Optional;
 
 import org.danilopianini.lang.HashUtils;
