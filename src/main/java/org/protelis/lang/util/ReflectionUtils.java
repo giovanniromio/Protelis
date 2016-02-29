@@ -27,7 +27,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
 import org.apache.commons.lang3.tuple.Triple;
 import org.apache.commons.math3.util.Pair;
-import org.danilopianini.lang.PrimitiveUtils;
 import org.protelis.lang.datatype.Field;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -155,7 +154,7 @@ public final class ReflectionUtils {
                              * No downcast required, there is compatibility
                              */
                             p++;
-                        } else if (!PrimitiveUtils.classIsNumber(expected)) {
+                        } else if (!PrimitiveUtilsBackport.classIsNumber(expected)) {
                             compatible = false;
                         }
                     }
@@ -286,8 +285,8 @@ public final class ReflectionUtils {
             final Object[] actualArgs = IntStreams.range(0, args.length).parallel().mapToObj(i -> {
                 final Class<?> expected = params[i];
                 final Object actual = args[i];
-                if (!expected.isAssignableFrom(actual.getClass()) && PrimitiveUtils.classIsNumber(expected)) {
-                    return PrimitiveUtils.castIfNeeded(expected, (Number) actual).get();
+                if (!expected.isAssignableFrom(actual.getClass()) && PrimitiveUtilsBackport.classIsNumber(expected)) {
+                    return PrimitiveUtilsBackport.castIfNeeded(expected, (Number) actual).get();
                 }
                 return actual;
             }).toArray();

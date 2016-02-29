@@ -16,7 +16,6 @@ import java.util.Map;
 import java8.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.danilopianini.lang.TriFunction;
 import org.protelis.lang.datatype.Field;
 
 /**
@@ -30,10 +29,10 @@ public enum Op3 {
     MUX("mux", Op3::mux);
 
     private static final Map<String, Op3> MAP = new ConcurrentHashMap<>();
-    private final TriFunction<Object, Object, Object, Object> fun;
+    private final TriFunctionBackport<Object, Object, Object, Object> fun;
     private final String opName;
 
-    Op3(final String name, final TriFunction<Object, Object, Object, Object> function) {
+    Op3(final String name, final TriFunctionBackport<Object, Object, Object, Object> function) {
         fun = function;
         opName = name;
     }

@@ -15,6 +15,7 @@ import java8.util.function.*;
 import org.apache.commons.math3.util.Pair;
 import org.danilopianini.lang.TriFunction;
 import org.protelis.lang.datatype.impl.FieldMapImpl;
+import org.protelis.lang.util.TriFunctionBackport;
 
 /**
  * A field is a function associating a collection of devices to values.
@@ -76,7 +77,7 @@ public interface Field extends Serializable {
      *            the third parameter
      * @return the result of the execution of fun(a, b, c)
      */
-    static Field apply(final TriFunction<Object, Object, Object, Object> fun, int[] fields, Object a, Object b,
+    static Field apply(final TriFunctionBackport<Object, Object, Object, Object> fun, int[] fields, Object a, Object b,
             Object c) {
         return apply((t, p) -> fun.apply(p[0], p[1], p[2]), false, fields, null, a, b, c);
     }
