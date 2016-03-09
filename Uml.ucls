@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="org.protelis.lang.datatype.Field" project="Protelis" 
+    file="/Protelis/src/main/java/org/protelis/lang/datatype/Field.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="419" width="477" x="-237" y="-64"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false" static="true"/>      
+      <operations public="true" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="org.protelis.lang.datatype.Tuple" project="Protelis" 
+    file="/Protelis/src/main/java/org/protelis/lang/datatype/Tuple.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="432" y="241"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </interface>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
