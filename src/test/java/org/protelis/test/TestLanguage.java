@@ -28,7 +28,6 @@ import org.junit.Test;
 import org.protelis.lang.ProtelisLoader;
 import org.protelis.lang.datatype.DatatypeFactory;
 import org.protelis.lang.datatype.Tuple;
-import org.protelis.lang.datatype.Tuples;
 import org.protelis.vm.ProtelisProgram;
 import org.protelis.vm.ProtelisVM;
 import org.protelis.vm.impl.DummyContext;
