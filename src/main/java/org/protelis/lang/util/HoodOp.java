@@ -22,6 +22,8 @@ import org.apache.commons.math3.util.Pair;
 import org.protelis.lang.datatype.DeviceUID;
 import org.protelis.lang.datatype.Field;
 import org.protelis.lang.datatype.Tuple;
+import org.protelis.lang.datatype.Tuples;
+import org.protelis.lang.datatype.DatatypeFactory;
 
 /**
  * Collection of functions and helper methods for reducing fields into local
@@ -75,8 +77,8 @@ public enum HoodOp {
      * Union of values.
      */
     UNION(HoodOp::union,
-          Tuple::create,
-          of(create(Object.class, Tuple::create)),
+          DatatypeFactory::createTuple,
+          of(create(Object.class, DatatypeFactory::createTuple)),
           of());
 
     private final BiFunction<Field, DeviceUID, Object> function;
@@ -140,7 +142,7 @@ public enum HoodOp {
     private static Tuple cTup(final Object v, final int size) {
         final Object[] r = new Object[size];
         Arrays.fill(r, v);
-        return Tuple.create(r);
+        return DatatypeFactory.createTuple(r);
     }
 
     /**
@@ -192,9 +194,9 @@ public enum HoodOp {
 
     private static Object union(final Field f, final DeviceUID n) {
         return f.reduceVals((a, b) -> {
-                final Tuple at = a instanceof Tuple ? (Tuple) a : Tuple.create(a);
-                final Tuple bt = b instanceof Tuple ? (Tuple) b : Tuple.create(b);
-                return Tuple.union(at, bt);
+                final Tuple at = a instanceof Tuple ? (Tuple) a : DatatypeFactory.createTuple(a);
+                final Tuple bt = b instanceof Tuple ? (Tuple) b : DatatypeFactory.createTuple(b);
+                return Tuples.union(at, bt);
             }, n, UNION.defs.apply(f));
     }
 

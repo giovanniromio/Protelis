@@ -14,9 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
-import java8.util.J8Arrays;
 import java8.util.Optional;
+import java8.util.J8Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java8.util.stream.Collectors;
@@ -29,6 +28,7 @@ import org.apache.commons.lang3.tuple.Triple;
 import org.apache.commons.math3.util.Pair;
 import org.danilopianini.lang.PrimitiveUtils;
 import org.protelis.lang.datatype.Field;
+import org.protelis.lang.datatype.Fields;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -254,7 +254,7 @@ public final class ReflectionUtils {
          */
         final int[] fieldIndexes = str.mapToInt(o -> ArrayUtils.indexOf(args, o)).toArray();
         if (fieldTarget || fieldIndexes.length > 0) {
-            return Field.apply(
+            return Fields.apply(
                     (actualT, actualA) -> ReflectionUtils.invokeMethod(toInvoke, actualT, actualA),
                     fieldTarget,
                     fieldIndexes,

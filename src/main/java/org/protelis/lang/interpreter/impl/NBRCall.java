@@ -8,11 +8,12 @@
  *******************************************************************************/
 package org.protelis.lang.interpreter.impl;
 
-import java.util.function.Function;
+import java8.util.function.Functions;
 
 import org.protelis.lang.datatype.Field;
 import org.protelis.lang.interpreter.AnnotatedTree;
 import org.protelis.vm.ExecutionContext;
+
 
 /**
  * Implementation of 'nbr' operator.
@@ -40,7 +41,7 @@ public class NBRCall extends AbstractAnnotatedTree<Field> {
         final AnnotatedTree<?> branch = getBranch(0);
         branch.evalInNewStackFrame(context, BRANCH);
         final Object childVal = branch.getAnnotation();
-        final Field res = context.buildField(Function.identity(), childVal);
+        final Field res = context.buildField(Functions.identity(), childVal);
         setAnnotation(res);
     }
 
